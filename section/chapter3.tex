@@ -1,9 +1,229 @@
-\chapter{Methods}
+\chapter{Fungsi dan Kelas}
+Tujuan pembelajaran pada pertemuan kedua antara lain:
+\begin{enumerate}
+\item
+Mengenal struktur fungsi di python dalam satu file dan cara pemanggilannya
+\item
+Mengerti cara membuat library fungsi dan melakukan import dan berbagai jenis import
+\item
+Mengerti struktur library kelas python dan cara pemakaiannya
+\item
+Mengatasi Error yang terjadi akibat pemakaian fungsi dan kelas
+\item
+Try Except
+\end{enumerate}
+Tugas dengan cara dikumpulkan dengan pull request ke github dengan menggunakan latex pada repo yang dibuat oleh asisten IRC. Kode program dipisah dalam folder src NPM.py yang berisi praktek dari masing-masing tugas file terpisah sesuai nomor yang kemudian dipanggil menggunakan input listing ke dalam file latex penjelasan atau nomor pengerjaan. Masing masing soal bernilai 5 dengan total nilai 100.
 
-\section{The data}
-PLease tell where is the data come from, a little brief of company can be put here.
+\section{Contoh Program}
+\subsection{Fungsi}
+Fungsi adalah satu blok program yang terdiri dari nama fungsi, input variabel dan variabel kembalian. Nama fungsi diawali dengan \textit{def} dan setelahnya tanda titik dua. Nama bisa sama dengan isi berbeda jika menggunakan huruf besar dan kecil atau sering disebut dengan \textit{case sensitive}. Input variabel bisa lebih dari satu dengan pemisah tanda koma. variabel kembalian pasti satu, bebas apakan itu jenis \textit{string}, \textit{integer}, \textit{list} atau \textit{dictionary}. Contoh dari fungsi sederhana bisa dilihat pada listing \ref{lst:fungsisederhana}. Dimana hasil akhir variabel c adalah 15.
+\begin{lstlisting}[caption=Fungsi Sederhana,label={lst:fungsisederhana}]
+def Penambahan(a,b):
+	r = a + b
+	return r
+	
+	
+a=2
+b=13
+c = Penambahan(a,b)
+\end{lstlisting}
+sekarang kita pisah fungsi dengan pemakaian fungsi tersebut dalam file terpisah. Kita buat file bernama \textit{kalkulator.py} yang berisi semua fungsi penambahan, pengurangan, perkalian dan pembagian seperti terlihat pada listing \ref{lst:kalkulatorlib}. Sehingga satu file yang hanya berisi semua fungsi ini kita namakan \textit{paket} atau \textit{library}.
+\begin{lstlisting}[caption=Library atau Paket kalkulator,label={lst:kalkulatorlib}]
+def Penambahan(a,b):
+	r = a + b
+	return r
+def Pengurangan(a,b):
+	r = a - b
+	return r
+def Perkalian(a,b):
+	r = a * b
+	return r
+def Pembagian(a,b):
+	r = a / b
+	return r
+\end{lstlisting}
+	Dan satu file yang memakai fungsi tersebut dengan nama file \textit{main.py}. Karena file kalkulator.py merupakan sebuah library maka kita panggil dulu dengan menggunakan perintah \textit{import}. Harus diingat file \textit{kalkulator.py} harus satu folder dengan \textit{main.py} yang berisi seperti listing\ref{lst:pakaikalkulator}.
+\begin{lstlisting}[caption=Cara penggunaan library kalkulator,label={lst:pakaikalkulator}]
+import kalkulator
 
-\section{Method 1}
-Definition, steps, algoritm or equation of method 1 and how to apply into your data
-\section{Method 2}
-Definition, steps, algoritm or equation of method 2 and how to apply into your data
+a=100
+b=50
+hasil1=kalkulator.Penambahan(a,b)
+hasil2=kalkulator.Pengurangan(a,b)
+hasil3=kalkulator.Perkalian(a,b)
+hasil4=kalkulator.Pembagian(a,b)
+\end{lstlisting}
+Maka kita bisa lihat hasilnya pada variabel hasil1, hasil2, hasil3, hasil4. Pada variabel exporer di spyder.
+
+\subsection{Kelas}
+Dasarnya dari kelas adalah pemrograman berbasis objek. Maka kita harus ingat, ada kelas ada objek ada atribut ada method. Fungsi kalkulator kita ubah menjadi kelas Ngitung.py menjadi seperti pada listing \ref{lst:kelasngitung}.
+\begin{lstlisting}[caption=Cara penggunaan library kalkulator,label={lst:kelasngitung}]
+class Ngitung:
+  def __init__(self, a, b):
+    self.a = a
+    self.b = b
+  def Penambahan(self):
+    r = self.a + self.b
+    return r
+  def Pengurangan(self):
+    r = self.a - self.b
+    return r
+  def Perkalian(self):
+    r = self.a * self.b
+    return r
+  def Pembagian(self):
+    r = self.a / self.b
+    return r
+\end{lstlisting}
+Dana pada file main.py untuk menggunakan kelas maka bedanya adalah penambahan variabel yang menjadi objek instansiasi dari kelas seperti terlihat pada listing \ref{lst:instanngitung}.
+\begin{lstlisting}[caption=Cara penggunaan library kalkulator,label={lst:instanngitung}]
+import ngitung
+
+a=100
+b=50
+
+hitung = ngitung.Ngitung(a,b)
+
+hasil1=hitung.Penambahan()
+hasil2=hitung.Pengurangan()
+hasil3=hitung.Perkalian()
+hasil4=hitung.Pembagian()
+\end{lstlisting}
+
+
+
+\section{Teori}
+Praktek teori penunjang yang dikerjakan :
+\begin{enumerate}
+\item
+Apa itu fungsi, inputan fingsi dan kembalian fungsi dengan contoh kode program lainnya.
+\item
+Apa itu paket dan cara pemanggilan paket atau library dengan contoh kode program lainnya.
+\item
+Jelaskan Apa itu kelas, apa itu objek, apa itu atribut, apa itu method dan contoh kode program lainnya masing-masing.
+\item
+Jelaskan cara pemanggikan library kelas dari instansiasi dan pemakaiannya dengan contoh program lainnya.
+\item
+Jelaskan dengan contoh pemakaian paket dengan perintah \textit{from kalkulator import Penambahan} disertai dengan contoh kode lainnya.
+\item
+Jelaskan dengan contoh kodenya, pemakaian paket fungsi apabila file library ada di dalam folder.
+\item
+Jelaskan dengan contoh kodenya, pemakaian paket kelas apabila file library ada di dalam folder.
+\end{enumerate}
+
+\section{Ketrampilan Pemrograman}
+Buat program di python dengan ketentuan:
+\begin{enumerate}
+\item
+Buatlah luaran huruf yang dirangkai dari tanda bintang, pagar atau plus dari NPM kita.
+Tanda bintang untuk NPM mod 3=0, tanda pagar untuk NPM mod 3 =1, tanda plus untuk NPM mod3=2.
+Contoh Output : 
+\begin{verbatim}
+*****    *** ******     *****    ****
+*******  *** ***  **    *** **  *****
+***  ******* ******     ***  **** ***
+***    ***** ***        ***       ***
+***     **** ***        ***       ***
+\end{verbatim}
+NPM sesuai dengan nomor NPM nya.
+\item
+Buatlah program hello word dengan input NPM yang disimpan dalam sebuah variabel string bernama \textbf{NPM} dan output sebanyak dua dijit belakang NPM, 
+contoh NPM : 113040087 maka akan ada output sebanyak 87 dengan tulisan `Hallo, 113040087 apa kabar?'
+\begin{verbatim}
+Input : 113040087
+Output : 
+Halo, 113040087 apa kabar? 
+Halo, 113040087 apa kabar?
+Halo, 113040087 apa kabar?
+Halo, 113040087 apa kabar?
+Halo, 113040087 apa kabar?
+Halo, 113040087 apa kabar?
+Halo, 113040087 apa kabar?
+Halo, 113040087 apa kabar?
+.....87 kali...
+\end{verbatim}
+\item
+Buatlah program hello word dengan input nama yang disimpan dalam sebuah variabel string bernama \textbf{NPM} dan beri luaran output berupa tiga karakter belakang dari NPM sebanyak penjumlahan tiga dijit tersebut, 
+\begin{verbatim}
+Input : 113040087
+Output : Halo, Nama apa kabar? 
+Halo, 087 apa kabar?
+Halo, 087 apa kabar?
+Halo, 087 apa kabar?
+Halo, 087 apa kabar?
+Halo, 087 apa kabar?
+Halo, 087 apa kabar?
+Halo, 087 apa kabar?
+........15 kali(0+8+7).........
+\end{verbatim}
+\item
+Buatlah program hello word dengan input nama yang disimpan dalam sebuah variabel string bernama \textbf{NPM} dan beri luaran output berupa digit ketiga dari belakang dari variabel NPM, 
+\begin{verbatim}
+Input : 113040087
+Output :
+Halo, 0 apa kabar?
+\end{verbatim}
+\item
+\label{digitvar2}
+(untuk soal no \ref{digitvar2} dan selanjutnya wajib menggunakan perulangan dan kondisi) buat program dengan mengisi variabel alfabet dengan nomor npm satu persatu berurut.
+Contoh untuk NPM : 113040087 maka,
+\begin{verbatim}
+a = 1
+b = 1
+c = 3
+e = 0
+f = 4
+g = 0
+h = 0
+i = 8
+j = 7
+\end{verbatim}
+Lakukan print NPM lengkap anda menggunakan variabel diatas :
+
+contoh : 113040087
+\item
+Dari soal no \ref{digitvar2}, Lakukan penjumlahan dari seluruh variabel tersebut,
+\item 
+Dari soal no \ref{digitvar2}, Lakukan perkalian dari seluruh variabel tersebut,
+\item
+Dari soal no \ref{digitvar2}, Lakukan print secara vertikal dari NPM anda menggunakan variabel diatas. Contoh:
+\begin{verbatim}
+1
+1
+3
+0
+4
+0
+0
+8
+7
+\end{verbatim}
+\item
+Dari soal no \ref{digitvar2}, Lakukan print NPM anda tapi hanya dijit genap saja. Contoh:
+\begin{verbatim}
+48
+\end{verbatim}
+\item
+Dari soal no \ref{digitvar2}, Lakukan print NPM anda tapi hanya dijit ganjil saja. Contoh:
+\begin{verbatim}
+1137
+\end{verbatim}
+\item 
+Dari soal no \ref{digitvar2}, Lakukan print NPM anda tapi hanya dijit yang termasuk bilangan prima saja. Contoh:
+\begin{verbatim}
+37
+\end{verbatim}
+\end{enumerate}
+
+
+\section{Ketrampilan Penanganan Error}
+Bagian Penanganan error dari script python.
+\begin{enumerate}
+\item
+Tuliskan peringatan error yang didapat dari mengerjakan praktek kedua ini, dan jelaskan cara penanganan error tersebut.
+\item
+Membuat file 2err.py dan mengisinya dengan script pengisian variabel sebagai string dan pengisian variabel sebagai interger. 
+Kemudian jumlahkan antara variabel integer dan string dan tangkap jenis errornya, gunakan try except untuk menunjukkan error tersebut dengan
+bahasa indonesia.
+\end{enumerate}
+
