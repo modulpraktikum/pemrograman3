@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Mon Mar 11 06:06:28 2019
-
+ini sebuah library atau package python
 @author: awangga
 """
 

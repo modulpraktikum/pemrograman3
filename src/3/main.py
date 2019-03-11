@@ -5,12 +5,13 @@ Created on Mon Mar 11 06:07:42 2019
 
 @author: awangga
 """
-import ngitung
+#import ngitung
+from ngitung import Ngitung
 
 a=100
 b=50
 
-hitung = ngitung.Ngitung(a,b)
+hitung = Ngitung(a,b)
 
 hasil1=hitung.Penambahan()
 hasil2=hitung.Pengurangan()

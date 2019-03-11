@@ -9,6 +9,7 @@ import kalkulator
 
 a=100
 b=50
+
 hasil1=kalkulator.Penambahan(a,b)
 hasil2=kalkulator.Pengurangan(a,b)
 hasil3=kalkulator.Perkalian(a,b)
