@@ -2,15 +2,18 @@
 # https://towardsdatascience.com/matplotlib-tutorial-learn-basics-of-pythons-powerful-plotting-library-b5d1b8f67596
 
 # In[1]: https://www.edureka.co/blog/python-matplotlib-tutorial/
-from matplotlib import pyplot as plt
+from matplotlib import pyplot as bebas
   
- #Plotting to our canvas
+#Plotting to our canvas
   
-plt.plot([1,2,3],[4,5,1])
+
+x=[1,2,3]
+y=[4,5,1]
+bebas.plot(x,y)
   
- #Showing what we plotted
+#Showing what we plotted
   
-plt.show()
+bebas.show()
 
 
 
@@ -21,8 +24,8 @@ x = [5,2,7]
 y = [2,16,4]
 plt.plot(x,y)
 plt.title('Info')
-plt.ylabel('Y axis')
-plt.xlabel('X axis')
+plt.ylabel('Ini Y Lho')
+plt.xlabel('Ini X lho')
 plt.show()
 
 
@@ -36,13 +39,13 @@ x = [5,8,10]
 y = [12,16,6]
 x2 = [6,9,11]
 y2 = [6,15,7]
-plt.plot(x,y,'g',label='line one', linewidth=5)
-plt.plot(x2,y2,'c',label='line two',linewidth=5)
+plt.plot(x,y,'g',label='line one', linewidth=1)
+plt.plot(x2,y2,'c',label='line two',linewidth=1)
 plt.title('Epic Info')
 plt.ylabel('Y axis')
 plt.xlabel('X axis')
 plt.legend()
-plt.grid(True,color='k')
+plt.grid(True,color='b')
 plt.show()
 
 # In[4]: bar
@@ -50,7 +53,7 @@ plt.show()
 from matplotlib import pyplot as plt
  
 plt.bar([0.25,1.25,2.25,3.25,4.25],[50,40,70,80,20],
-label="BMW",width=.5)
+label="BMW",color='m',width=.5)
 plt.bar([.75,1.75,2.75,3.75,4.75],[80,20,20,50,60],
 label="Audi", color='r',width=.5)
 plt.legend()
@@ -63,7 +66,7 @@ plt.show()
 
 
 import matplotlib.pyplot as plt
-population_age = [22,55,62,45,21,22,34,42,42,4,2,102,95,85,55,110,120,70,65,55,111,115,80,75,65,54,44,43,42,48]
+population_age = [11,22,16,9,10,15,22,55,62,45,21,22,34,42,42,4,2,102,95,85,55,110,120,70,65,55,111,115,80,75,65,54,44,43,42,48]
 bins = [0,10,20,30,40,50,60,70,80,90,100]
 plt.hist(population_age, bins, histtype='bar', rwidth=0.8)
 plt.xlabel('age groups')
@@ -82,8 +85,8 @@ y1=[3,3.5,3.7,4,4.5,5,5.2]
  
 plt.scatter(x,y, label='high income low saving',color='r')
 plt.scatter(x1,y1,label='low income high savings',color='b')
-plt.xlabel('saving*100')
-plt.ylabel('income*1000')
+plt.xlabel('simpanan dalam ratusan')
+plt.ylabel('pendapatan dalam ribuan')
 plt.title('Scatter Plot')
 plt.legend()
 plt.show()
@@ -131,7 +134,7 @@ plt.pie(slices,
   colors=cols,
   startangle=90,
   shadow= True,
-  explode=(0,0.1,0,0),
+  explode=(0.1,0,0,0),
   autopct='%1.1f%%')
  
 plt.title('Pie Plot')
@@ -147,9 +150,9 @@ def f(t):
     return np.exp(-t) * np.cos(2*np.pi*t)
 t1 = np.arange(0.0, 5.0, 0.1)
 t2 = np.arange(0.0, 5.0, 0.02)
-plt.subplot(221)
+plt.subplot(221)#tinggi,lebar,urutan
 plt.plot(t1, f(t1), 'bo', t2, f(t2))
-plt.subplot(222)
+plt.subplot(224)
 plt.plot(t2, np.cos(2*np.pi*t2))
 plt.show()
 
