@@ -39,13 +39,13 @@ x = [5,8,10]
 y = [12,16,6]
 x2 = [6,9,11]
 y2 = [6,15,7]
-plt.plot(x,y,'g',label='line one', linewidth=1)
-plt.plot(x2,y2,'c',label='line two',linewidth=1)
+plt.plot(x,y,'g',label='data pertama', linewidth=1)
+plt.plot(x2,y2,'c',label='data kedua',linewidth=1)
 plt.title('Epic Info')
 plt.ylabel('Y axis')
 plt.xlabel('X axis')
 plt.legend()
-plt.grid(True,color='b')
+#plt.grid(True,color='b')
 plt.show()
 
 # In[4]: bar
@@ -68,7 +68,7 @@ plt.show()
 import matplotlib.pyplot as plt
 population_age = [11,22,16,9,10,15,22,55,62,45,21,22,34,42,42,4,2,102,95,85,55,110,120,70,65,55,111,115,80,75,65,54,44,43,42,48]
 bins = [0,10,20,30,40,50,60,70,80,90,100]
-plt.hist(population_age, bins, histtype='bar', rwidth=0.8)
+plt.hist(population_age, bins, histtype='bar', rwidth=.9)
 plt.xlabel('age groups')
 plt.ylabel('Number of people')
 plt.title('Histogram')
@@ -134,7 +134,7 @@ plt.pie(slices,
   colors=cols,
   startangle=90,
   shadow= True,
-  explode=(0.1,0,0,0),
+  explode=(0,0.1,0,0),
   autopct='%1.1f%%')
  
 plt.title('Pie Plot')
@@ -148,13 +148,16 @@ import matplotlib.pyplot as plt
  
 def f(t):
     return np.exp(-t) * np.cos(2*np.pi*t)
+
 t1 = np.arange(0.0, 5.0, 0.1)
 t2 = np.arange(0.0, 5.0, 0.02)
-plt.subplot(221)#tinggi,lebar,urutan
+plt.subplot(331)#tinggi,lebar,urutan
 plt.plot(t1, f(t1), 'bo', t2, f(t2))
-plt.subplot(224)
+plt.subplot(335)
 plt.plot(t2, np.cos(2*np.pi*t2))
-plt.show()
+plt.subplot(339)
+plt.plot(t2, np.cos(2*np.pi*t2))
+plt.savefig("kodok.png")
 
 # In[10]:
 
